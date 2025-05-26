@@ -1,0 +1,343 @@
+/******************************************************************************
+START Lab Basic Page Styles
+******************************************************************************/
+
+/* Our default values set as CSS variables */
+:root {
+  --color-text: #000000;
+  --color-bg: #f9f9f9;
+  --color-text-main: #000000;
+  --color-primary: #FFFF00;
+  --color-hover:#6DB1BF;
+  --wrapper-height: 87vh;
+  --image-max-width: 300px;
+  --image-margin: 3rem;
+  --font-family: 'Inter', sans-serif;
+  --font-weight: 500;
+  --line-height: 1.2;
+}
+
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+/* 
+  These rules apply to actual HTML elements with no labelling!
+  So: they style the tags directly
+*/
+
+html {
+  background-color: var(--color-bg);
+  font-size: 16px;
+  min-width: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  /* these are specific to different browsers */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family); /*  This is an example of a custom CSS property  */
+  margin: 0;
+  padding: 0;
+  color: var(--color-text);
+}
+
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color-hover);
+  font-weight: 500;
+}
+
+a:hover{
+  color: #000000;
+}
+
+h2 {
+  font-size: 28px; 
+}
+
+h3 {
+  font-size: 24px;
+}
+
+form {
+  accent-color: hsla(120, 100%, 50%, 0.482);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center; 
+}
+
+/******************************************************************************
+IMPORT DECLARATIONS
+
+these import styles from other sheets, in order
+******************************************************************************/
+
+@import url("./mapstyle.css");
+
+/******************************************************************************
+CLASS DECLARATIONS
+
+  - These styles use 'class names'
+  - You can apply them by using the 'class' attribute on your HTML
+  - like this: <div class="wrapper">
+  - note that the period vanishes there!
+******************************************************************************/
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  flex: 1;
+}
+
+.container {
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover {
+  padding: 10px 50px 10px 50px;
+  justify-content: center;
+  text-align: center;
+}
+
+.cover img{
+  width: 60%;
+  margin-bottom: 0px;
+  animation-name: flo;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes flo{
+  50%{
+    transform: translateY(-20px);
+  }
+}
+
+.logo {
+  width: 100px;
+}
+
+.navbar{
+  display: flex;
+  margin: 20px;
+  justify-content: space-between;
+}
+
+.menu a {
+  margin-left: 20px;
+}
+
+.title{
+  font-size: 3rem;
+}
+
+.food-text{
+  color: var(--color-hover);
+}
+
+.newcolor{
+  color: red;
+}
+
+
+h1 span {
+  position: relative;
+  top: 15px;
+  display: inline-block;
+  -webkit-animation: bounce 0.3s ease infinite alternate;
+  color: #fff;
+}
+
+h1 span:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
+}
+
+h1 span:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+}
+
+h1 span:nth-child(4) {
+  -webkit-animation-delay: 0.3s;
+}
+
+/* ANIMATION */
+@-webkit-keyframes bounce {
+  100% {
+    top: -15px;
+  }
+}
+
+
+/*
+  This rule implies that the H1 tag lives within another HTML tag
+  It "inherits" some rules from the above
+  Those rules won't apply to an h1 that's outside a block with the class of 'header'
+*/
+
+
+/*
+  This block is actually dependent on the "container" block having a flex set on it
+  and the "wrapper" block displaying as a flex column with a "vertical height" (vh) of 100.
+  That serves to cram the footer to the bottom of the page.
+*/
+
+.footer {
+  flex-shrink: 0;
+  padding: 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.footer a {
+  text-decoration: underline;
+}
+
+/*
+  This is an example of a 'pseudoclass'
+  In this instance, it says what to do if a mouse hovers over a link
+  This is pretty desktop-specific, since there's no hover function on touchscreens
+*/
+.footer a:hover {
+  /* Hue, saturation, luminosity, alpha */
+  background-color: hsla(0, 0%, 90%, 0.15);
+  /* red, green, blue, alpha */
+  text-decoration: none;
+}
+
+.solid{
+  border-top: 1px solid #f9f9f9;
+}
+
+.subtitle {
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0px;
+  margin-bottom: 5px;
+}
+
+/*
+Form Styles
+*/
+
+.input-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  transition: border-color 0.3s; /* Smooth transition for the border color */
+}
+
+.card {
+  display: flex;
+  max-width: 650px;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center; 
+  background-color: #ffffff;
+  margin: auto;
+  margin-top:0;
+  padding: 20px;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+li{
+  list-style-type: none;
+  line-height: 2;
+  text-align: center;
+  font-weight: 500;
+}
+
+form input {
+  box-sizing: border-box;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--color-bg);
+  background-image: url('https://cdn.glitch.global/bd9848f4-1815-4632-8458-e84889796f81/sort.png?v=1694497202089');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 20px auto;
+  padding: 20px 50px 20px 50px;
+  max-width: 50ch;
+  /* This is a hack to make sure our boxes line up with one another nicely */
+  width: 100%;
+  width: -moz-available;          /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+  width: fill-available;
+
+  /* here we are setting white space correctly */
+  margin-bottom: 1rem;
+  height: 2rem;
+}
+
+form input:focus {
+  background-color: var(--color-bg);
+  background-image: url('https://cdn.glitch.global/bd9848f4-1815-4632-8458-e84889796f81/sort.png?v=1694497202089');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 20px auto;
+}
+
+form label {
+  width: 100%;
+  width: -moz-available;          /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+  width: fill-available;
+  align-items: flex-start;
+
+  display: block; /* this turns the label text into a box we can set margins on */
+  margin-bottom: 0.5rem;
+}
+
+
+/* Style for the form button */
+
+form button {
+  padding: 12px 20px 12px 20px;
+  border: none;/* Remove the default button border */
+  background-color: var(--color-hover); /* Set the background color to black */
+  color: white; /* Set the text color to white */
+  border-radius: 0.75rem; /* 12px */
+  cursor: pointer; /* Change the cursor to a pointer on hover */
+}
+
+/* Hover effect for the button */
+form button:hover {
+    background-color: black; /* Darken the background color on hover */
+}
+/* 
+  Set some rules for smaller screens
+*/
+
+.hungry{
+  margin: 10px;
+  padding: 12px 20px 12px 20px;
+  border: none;/* Remove the default button border */
+  background-color: black; /* Set the background color to black */
+  color: white; /* Set the text color to white */
+  border-radius: 0.75rem; /* 12px */
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px){
+}
