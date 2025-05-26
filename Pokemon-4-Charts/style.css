@@ -1,0 +1,219 @@
+/******************************************************************************
+START Lab Basic Page Styles
+******************************************************************************/
+
+/* Our default values set as CSS variables */
+:root {
+  --color-text: #49545B;
+  --color-hightext: #D76059;
+  --color-bg: #FCFCFC;
+  --color-text-main: #000000;
+  --color-primary: #FFFF00;
+  --color-hover:#C73A34;
+  --wrapper-height: 87vh;
+  --image-max-width: 300px;
+  --image-margin: 3rem;
+  --font-family: 'Inter', sans-serif;
+  --font-weight: 500;
+  --line-height: 1.2;
+}
+
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+/* 
+  These rules apply to actual HTML elements with no labelling!
+  So: they style the tags directly
+*/
+
+html {
+  background-image:url("./assets/bg.png");
+  background-size: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: var(--color-bg);
+  font-size: 16px;
+  min-width: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  /* these are specific to different browsers */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family); /*  This is an example of a custom CSS property  */
+  margin: 0;
+  padding: 0;
+}
+
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color-hover);
+  font-weight: 500;
+}
+
+a:hover{
+  color: #000000;
+}
+
+h2 {
+  font-size: 20px; 
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-text);
+}
+
+h3 {
+  color: #FFD166;
+}
+
+p {
+  font-size: 12px; 
+  text-align: center;
+  color: var(--color-text);
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  flex: 1;
+}
+
+.container {
+  margin: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover {
+  padding: 30px;
+  justify-content: center;
+  text-align: center;
+}
+
+.logo {
+  width: 40px;
+  margin: 5px;
+}
+
+.navbar{
+  display: flex;
+  margin: 10px 20px 0px 20px;
+  justify-content: space-between;
+}
+
+.navdiv{
+  color: rgb(226 232 240);
+  border-top: 1px;
+}
+
+.column {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.column img {
+  max-height: var(--image-max-width);
+  margin-top: var(--image-margin);
+  margin: 50px;
+}
+
+.column canvas{
+  max-width: 600px;
+  max-height: 300px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.row img{
+  margin: 15px;
+  width: 100px;
+  max-width: 100%;
+}
+
+.cardleft {
+  display: flex;
+  width: 30%;
+  margin: 20px;
+  margin-right: 0;
+}
+
+.cardleft img{
+  width: 100%;
+  justify-items: center;
+}
+
+.cardright {
+  display: flex;
+  flex-grow: 1;
+  height: 250px;
+  margin: 15px;
+  text-align: center;
+  justify-items: center;
+}
+
+
+.menu a {
+  margin-left: 20px;
+}
+
+.title{
+  line-height: 1.5;
+  color: var(--color-hightext);
+  font-size: 2rem;
+  margin-left: 40px;
+}
+
+.loader {
+  visibility: visible;
+}
+
+button {
+  padding: 12px 20px 12px 20px;
+  margin-top: 30px;
+  border: none;/* Remove the default button border */
+  background-color: var(--color-hover); /* Set the background color to black */
+  color: white; /* Set the text color to white */
+  border-radius: 0.5rem;
+  cursor: pointer; /* Change the cursor to a pointer on hover */
+}
+
+/* Hover effect for the button */
+button:hover {
+  background-color: black; /* Darken the background color on hover */
+}
+/*
+Form Styles
+*/
+
+.input-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  transition: border-color 0.3s; /* Smooth transition for the border color */
+}

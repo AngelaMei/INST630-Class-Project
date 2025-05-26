@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="./assets/game.png"/>
+
+    <title>Pokémon Chart</title>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.473/build/spline-viewer.js"></script>
+    <script src="./chartjs.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- import the webpage's javascript file -->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="navbar">
+          <a href="https://jolly-ajar-catsup.glitch.me">
+            <img src="./assets/pokeball.png" class="logo" alt="Logo">
+          </a>
+            <ul class="menu">
+                <a href="https://pokemondb.net/pokedex/cosmoem">Resource</a>
+                <a href="https://pokeapi.co/">API</a>
+            </ul>
+        </div>
+        <hr class="navdiv">
+      </header>
+      <div class="cover">
+        <div class="column">
+          <h1 class="title">How much do you know about<br>Pokémon?</h1>
+          <div class="row loader">
+            <img src="./assets/Spinner-1s-200px (1).svg"/>
+          </div>
+          <div class="row">
+            <img id="pokemonImg0"/>
+            <img id="pokemonImg1"/>
+            <img id="pokemonImg2"/>
+            <img id="pokemonImg3"/>
+            <img id="pokemonImg4"/>
+          </div>
+          <button id="submitPokemon">Random Pokemon</button>
+            <!-- This looks empty but is a load animation!-->
+<!--           src="https://cdn.glitch.global/63fff11a-96ef-4a13-a724-2f2dfc4d5929/Untitled.001.png?v=1696916889023" -->
+        </div>
+      </div>
+      <div class="cover">
+        <div class="column">
+          <h2>Are Pokémon's Height and Weight Proportional?</h2>
+          <p>x: Height(dm) / y: Weight(Hg)</p>
+          <canvas id="myChart1"></canvas>
+          <div class="row loader">
+            <img src="./assets/Spinner-1s-200px (1).svg"/>
+          </div>
+        </div>
+      </div>
+      <div class="cover">
+        <div class="column">
+          <h2>How Many Pokémon are there of each Type?</h2>
+          <p>Some Pokémons have more than one type.</p>
+          <canvas id="myChart2"></canvas>
+          <div class="row loader">
+            <img src="./assets/Spinner-1s-200px (1).svg"/>
+          </div>
+        </div>
+      </div>
+      <div class="cover">
+        <div class="column">
+          <h2>Are Heavier Pokémon Stronger?</h2>
+          <p>x: Weight(Hg) / y: The average of each weight's Experience</p>
+          <canvas id="myChart3"></canvas>
+          <div class="row loader">
+            <img src="./assets/Spinner-1s-200px (1).svg"/>
+          </div>
+        </div>
+      </div>
+      <div class="cover">
+        <div class="column">
+          <h2>The Highest Density Pokemon!</h2>
+          <h3>Cosmoem!</h3>
+          <p>Weight: 999.9Kg / Height: 1dm</p>
+          <div class="row">
+            <div>
+              <img id="pokemonImg5"/>
+              <p>↑ This is Cosmoem.</p>
+            </div>
+            <canvas id="myChart4"></canvas>
+            <div class="row loader">
+              <img src="./assets/Spinner-1s-200px (1).svg"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--<script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.473/build/spline-viewer.js"></script>
+          <spline-viewer url="https://prod.spline.design/itWqew8FVVSQX4ko/scene.splinecode"></spline-viewer> -->        
+    </div>
+  </body>
+</html>
